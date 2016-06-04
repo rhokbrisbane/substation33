@@ -1,5 +1,13 @@
 # substation33
 
+## Technologies
+
+Frontend: Angular
+Backend:  Node
+Database: Firebase
+Emailing: SendGrid
+Hosting:  Heroku
+
 ## install stuff
 
 npm install
