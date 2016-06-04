@@ -1,6 +1,6 @@
 var app = angular.module('app');
 
-app.controller('UsersCtrl', function ($scope, $http) {
+app.controller('UsersCtrl', ['$scope', '$http', function ($scope, $http) {
     $scope.users = [{
         name: 'Drew'
     }, {
@@ -8,6 +8,6 @@ app.controller('UsersCtrl', function ($scope, $http) {
     }, {
         name: 'Mike'
     }];
-});
+}]);
 
 
