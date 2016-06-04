@@ -7,6 +7,8 @@ const app         = express();
 const router      = express.Router();
 const port        = 8081;
 
+const helpers     = require('./server/helpers.js');
+
 firebase.initializeApp({
     "databaseURL": "https://project-6353258358688553392.firebaseio.com",
     "serviceAccount": "config/firebase.json"
