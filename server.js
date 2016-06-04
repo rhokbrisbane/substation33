@@ -6,6 +6,8 @@ const app         = express();
 const router      = express.Router();
 const port        = 8081;
 
+const helpers     = require('./server/helpers.js');
+
 app.use(express.static(__dirname + '/build'));
 app.use('/api', router);
 
