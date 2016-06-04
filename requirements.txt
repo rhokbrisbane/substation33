@@ -1,0 +1,60 @@
++++++++++++++++++++++
+Project requirements+
++++++++++++++++++++++
+==================================
+FORM
+==================================
+Customer:
+First Name = string
+Last Name = String
+Addresss = string
+email = string
+onsite/offsite = tick box or dropdown menu with these options
+reason for donation : drop down or tickbox
+Donation:
+desktop computer = count 
+monitor = count 
+TV = count  
+Laptop = count 
+Printer = weight 
+accessories (cables, mice) = weight
+Other (Microwaves, Jugs, Toasters) = weight
+date = string
+
+
+
+
+jsonformat:
+{"customer" : {"firstName" : "first",
+		"lastName" : "last",
+		"address" : "123 fakestreet fakey 4056",
+		"email" : "email@gmail.com"
+		},
+ "donation" : {"donationLocation" : "offsite or onsite",
+		"donationReason" : "felt like it",
+		"date" : 12/12/2016
+		"desktopComputer" : 5,
+		"monitor" : 2,
+		"TV" : 8,
+		"laptop" : 1,
+		"printer" : 2,
+		"accessories" : 56,
+      		"other" : 34
+		}
+}
+
+
+
+==================================
+EMAIL
+==================================
+where a count is used for a donation type a hardcoded value of the usual weight will be used
+ 
+email format :
+dontation of X kg was provided to the org to the organisation 
+this donation equates to X hours of paid employments
+this donation equates to X hours of volunteer/work experience
+
+equations for values:
+1kg = 0.0897941305 hours of paid employments
+1kg = 0.244986574 hours of workexperience/volunteer
