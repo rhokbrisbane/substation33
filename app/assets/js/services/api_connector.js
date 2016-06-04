@@ -12,9 +12,13 @@ angular.module('app').service('api_connector', ['$http', function($http) {
       headers: {
         'Content-Type': 'application/json'
       },
-      body: requestBody
+      data: requestBody
     });
 
+  };
+
+  return {
+    sendCollectionDetails: sendCollectionDetails
   };
 
 }]);
