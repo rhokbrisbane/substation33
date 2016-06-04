@@ -6,7 +6,7 @@ const app         = express();
 const router      = express.Router();
 const port        = 8080;
 
-app.use(express.static(__dirname + '/public'));
+app.use(express.static(__dirname + '/build'));
 app.use('/api', router);
 
 router.use(bodyParser.json());
