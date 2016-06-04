@@ -4,7 +4,7 @@ const express     = require('express');
 const bodyParser  = require('body-parser');
 const app         = express();
 const router      = express.Router();
-const port        = 8080;
+const port        = 8081;
 
 app.use(express.static(__dirname + '/build'));
 app.use('/api', router);
