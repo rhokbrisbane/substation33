@@ -2,3 +2,5 @@ app/assets/vendor
 bower_components
 build
 /node_modules/
+
+config/firebase.json
