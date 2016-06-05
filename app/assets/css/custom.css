@@ -26,11 +26,18 @@ body {
 .grey { color: #9E9E9E }
 .bg-grey { background-color: #9E9E9E }
 
+.light-grey { color: #efefef }
+.bg-light-grey { background-color: #efefef }
+
 .green { color: #6fbf24 }
 .bg-green { background-color: #6fbf24 }
 
 .dark-green { color: #478912 }
 .bg-dark-green { background-color: #478912 }
+
+.blue { color: #055666 }
+.bg-blue { background-color: #055666 }
+.bg-blue-hover:hover { background-color: #055666 }
 
 .bg-dark-green-hover:hover { background-color: #478912 }
 
@@ -38,6 +45,10 @@ body {
 
 .shadow {
   box-shadow: 0px 2px 7px 0px rgba(65,117,5,0.60);
+}
+
+.grey-shadow {
+  box-shadow: 0px 2px 7px 0px rgba(0,0,0,0.2);
 }
 
 .min-height-100 {
@@ -56,8 +67,78 @@ body {
   transform: scale(1.1); 
 }
 
+.grow-small {
+  transition: all 0.2s ease;
+}
+
+.grow-small:hover {
+  transform: scale(1.03);
+}
+
+
 .container {
   max-width: 45rem;
 }
 
+/* decorations */
 
+.border-bottom {
+  border-bottom: 1px solid currentColor;
+}
+
+
+/* default form styling */
+
+input[type='email'],
+input[type='number'],
+input[type='password'],
+input[type='search'],
+input[type='tel'],
+input[type='text'],
+input[type='url'],
+textarea,
+select {
+  appearance: none;
+  background-color: #ebebeb;
+  border: .1rem solid #ebebeb;
+  box-shadow: none;
+  padding: .6rem 1.0rem;
+  width: 100%;
+}
+
+input[type='email']:focus,
+input[type='number']:focus,
+input[type='password']:focus,
+input[type='search']:focus,
+input[type='tel']:focus,
+input[type='text']:focus,
+input[type='url']:focus,
+textarea:focus,
+select:focus {
+  border: .1rem solid #6ebe23;
+  outline: 0;
+  background: white;
+}
+
+/* interactions */
+
+.clickable {
+  cursor: pointer;
+}
+
+/* buttons */
+
+.button,
+button,
+input[type='button'],
+input[type='reset'],
+input[type='submit'] {
+  background-color: #6ebe23;
+  border: .1rem solid transparent;
+  color: initial;
+  cursor: pointer;
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
+}

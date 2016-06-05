@@ -4,14 +4,15 @@
 .h2{ font-size: 1.5rem }
 .h3{ font-size: 1.25rem }
 .h4{ font-size: 1rem }
-.h5{ font-size: .875rem }
-.h6{ font-size: .75rem }
+.h5{ font-size: .75rem }
+.h6{ font-size: .60rem }
 
 .font-family-inherit{ font-family:inherit }
 .font-size-inherit{ font-size:inherit }
 .text-decoration-none{ text-decoration:none }
 
 .bold{ font-weight: bold; font-weight: bold }
+.light {font-weight: 300;}
 .regular{ font-weight:normal }
 .italic{ font-style:italic }
 .caps{ text-transform:uppercase; letter-spacing: .2em; }

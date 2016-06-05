@@ -1,41 +1,41 @@
 <div>
-  Enter a new order:
+  <p class="inline-block pb2 h2 mt1 light">Enter a new order</p>
 
   <form action="">
 
     <section>
       
-      <h2>Customer</h2>
+      <p class="h3">Customer</p>
 
-      <span>Name:</span>
+      <span class="h6 inline-block caps pt2 bold">Name:</span>
       <input type="text" ng-model="form.customer.name" />
 
-      <span>Address:</span>
+      <span class="h6 inline-block caps pt2 bold">Address:</span>
       <input type="text" ng-model="form.customer.address" />
 
-      <span>email:</span>
+      <span class="h6 inline-block caps pt2 bold">email:</span>
       <input type="text" ng-model="form.customer.email" />
 
-      <span>Phone Number:</span>
+      <span class="h6 inline-block caps pt2 bold">Phone Number:</span>
       <input type="text" ng-model="form.customer.contact_number" />
 
     </section>
 
 
-    <section>
-      <h2>Driver</h2>
+    <section class="pt2">
+      <p class="h3">Driver</p>
     </section>
 
-    <section>
-      <h2>Donation Details</h2>
+    <sectioni class="pt3">
+      <p class="h3">Donation Details</p>
 
-      <span>Prescribed:</span>
+      <span class="h6 inline-block caps pt2 bold">Prescribed:</span>
       <input type="number" ng-model="form.donation.prescribed_weight" ng-change="updateTotalWeight()" />
 
-      <span>Non-Prescribed:</span>
+      <span class="h6 inline-block caps pt2 bold">Non-Prescribed:</span>
       <input type="number" ng-model="form.donation.nonprescribed_weight" ng-change="updateTotalWeight()" />
 
-      <span>Total:</span>
+      <span class="h6 inline-block caps pt2 bold">Total:</span>
       <div>{{ form.donation.total_donation_weight }}</div>
 
 
@@ -44,14 +44,14 @@
 
     <section>
       
-      <span>Collected?</span>
+      <span class="h6 inline-block caps pt2 bold">Collected?</span>
       <input type="checkbox" ng-model="form.donation.collected">
 
     </section>
   </form>
-
-  <button ng-click="addCollectionInformation()"></button>
-
-
+  
+  </br>
+  <button class="clearfix right p1 h4 white bg-blue-hover rounded grow" ng-click="addCollectionInformation()"> Submit </button>
+  <div class="clearfix"></div>
 
 </div>
