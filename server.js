@@ -14,6 +14,11 @@ firebase.initializeApp({
     "serviceAccount": "config/firebase.json"
 });
 
+firebase.database.enableLogging(true);
+
+var db = firebase.database();
+var ref = db.ref("collections");
+
 app.use(express.static(__dirname + '/build'));
 app.use('/api', router);
 
@@ -21,8 +26,16 @@ router.use(bodyParser.json());
 
 router.route('/collection')
   .post((req, res) => {
-    console.log(req.body);
-    res.json({ response: 'request received!' });
+    
+    var newCollectionKey = firebase.database().ref().child('collections').push().key;
+
+    var updates = {};
+    updates['/collections/' + newCollectionKey] = req.body;
+  
+    firebase.database().ref().update(updates).then(function(result) {
+      console.log(req.body);
+      res.json({ response: 'request received!' });
+    })
   });
 
 app.listen(port, () => {
