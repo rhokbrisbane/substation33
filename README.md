@@ -22,6 +22,12 @@ bower install
 
 See `server/config.js`
 
+PLUS, you'll need to setup the env vars:
+
+    export FIREBASE_PRIVATE_KEY_ID=asdf
+    export FIREBASE_PRIVATE_KEY="-----BEGIN PRIVATE KEY-----\n**HERE**\n-----END
+    # (before you start the server in your shell)
+
 ## start server
 
 ```

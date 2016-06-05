@@ -2,6 +2,5 @@
 app/assets/vendor
 bower_components
 build
-config/firebase.json
 npm-debug.log
 tmp/*
