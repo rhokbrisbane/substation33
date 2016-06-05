@@ -12,8 +12,8 @@ const port        = config.port;
 const helpers     = require('./server/helpers.js');
 
 firebase.initializeApp({
-    "databaseURL": "https://project-6353258358688553392.firebaseio.com",
-    "serviceAccount": "config/firebase.json"
+  "databaseURL": "https://project-6353258358688553392.firebaseio.com",
+  "serviceAccount": "config/firebase.json"
 });
 
 var db = firebase.database();
@@ -25,29 +25,17 @@ app.use('/api', router);
 router.use(bodyParser.json());
 
 router
-  .post('/collections', (req, res) => {
-    
-    var newCollectionKey = firebase.database().ref().child('collections').push().key;
-
-    var updates = {};
-    updates['/collections/' + newCollectionKey] = req.body;
-  
-    firebase.database().ref().update(updates).then(function(result) {
-      console.log(req.body);
-      res.json({ response: 'request received!' });
-    })
-  })
   .get('/collections/:date', (req, res) => {
     
     var date = req.params.date;
     
     var ref = firebase.database().ref("collections");
-    ref.orderByChild("donation/date").equalTo(date).once('value').then(function(snapshot) {
+    ref.orderByChild("donation/date").equalTo(parseInt(date)).once('value').then(function(snapshot) {
       res.json(snapshot.val());
     });
     
   })
-  .get('/collection/:key', (req, res) => {
+  .get('/collection', (req, res) => {
     
     var key = req.params.key;
     
@@ -57,17 +45,21 @@ router
     });
     
   })
-  .post('/collection/:key', (req, res) => {
+  .post('/collection', (req, res) => {
     
-    var key = req.params.key;
-
-    var updates = {};
-    updates['/collections/' + key] = req.body;
+    var key = req.query.key;
   
-    firebase.database().ref().update(updates).then(function(result) {
-      console.log(req.body);
-      res.json({ response: 'request received!' });
-    })
+    if (key == undefined) {
+      firebase.database().ref('/collections/').push(req.body).then(function(result) {
+        res.json({ response: 'request received!' });
+      });
+    } else {
+      var updates = {};
+      updates['/collections/' + key] = req.body;
+      firebase.database().ref().update(updates).then(function(result) {
+        res.json({ response: 'request received!' });
+      }); 
+    }
     
   });
 router.route('/emails/thank-you')

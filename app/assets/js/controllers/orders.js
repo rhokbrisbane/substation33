@@ -9,17 +9,26 @@ angular.module('app')
       name: 'blah3'
     }];
 
+    var objectToArray = function(object) {
+      return Object.keys(object).map(function(key) {
+        var item = object[key];
+        item._id = key;
+        console.log(item);
+        return item;
+      });
+    };
+
     $scope.onDateChange = function(e) {
       // TODO: get date from event
-      $scope.getOrders(start);
+      //$scope.getOrders(start);
     };
 
     $scope.getOrders = function(start) {
-      var startDate = new Date(start.setHours(0,0,0,0));
-      var endDate   = new Date(start.setHours(23,59,59,999));
+      var startDate = new Date(start.setHours(0,0,0,0)).getTime();
 
-      api_connector.getOrdersByDate(startDate, endDate).then(function (response) {
-        $scope.orders = response;
+      api_connector.getOrdersByDate(startDate).then(function (response) {
+
+        $scope.orders = objectToArray(response.data);
       });
     };
 

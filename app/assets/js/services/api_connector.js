@@ -6,7 +6,7 @@ angular.module('app')
     var getOrdersByDate = function getOrdersByDate(date) {
       return $http({
         method: 'GET',
-        url: baseURL + 'collections/' + date
+        url: baseUrl + 'collections/' + date
       });
     };
 
@@ -23,7 +23,7 @@ angular.module('app')
 
       return $http({
         method: 'POST',
-        url: baseUrl + 'collections',
+        url: baseUrl + 'collection' + (requestBody._id ? ('?key=' + requestBody._id) : ''),
         headers: {
           'Content-Type': 'application/json'
         },
