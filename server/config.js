@@ -1,7 +1,7 @@
 'use strict';
 
 module.exports = {
-  port:             8081,
+  port:             process.env.PORT || 8081,
   environment:      process.env.ENVIRONMENT || 'development',
   emailGateway: {
     sendEmails:     process.env.ENVIRONMENT === 'production',
