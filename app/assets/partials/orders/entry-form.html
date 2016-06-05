@@ -5,7 +5,7 @@
 
     <section>
       
-      <p class="h3">Customer</p>
+      <p class="h3 mt1">Customer</p>
 
       <span class="h6 inline-block caps pt2 bold">Name:</span>
       <input type="text" ng-model="form.customer.name" />
@@ -29,7 +29,11 @@
     <sectioni class="pt3">
       <p class="h3">Donation Details</p>
 
-      <span class="h6 inline-block caps pt2 bold">Prescribed:</span>
+      <span class="h6 inline-block caps pt2 bold">Reason for donation:</span><br>
+      <p class="pt1"><input type="checkbox" ng-model="form.donation.social"> Social </p>
+      <p class="pt1"><input type="checkbox" ng-model="form.donation.environmental"> Environmental </p>
+
+      <span class="h6 inline-block caps pt2 mt2 bold">Prescribed:</span>
       <input type="number" ng-model="form.donation.prescribed_weight" ng-change="updateTotalWeight()" />
 
       <span class="h6 inline-block caps pt2 bold">Non-Prescribed:</span>
