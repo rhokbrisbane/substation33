@@ -41,5 +41,8 @@
   "bugs": {
     "url": "https://github.com/rhokbrisbane/substation33/issues"
   },
-  "homepage": "https://github.com/rhokbrisbane/substation33#readme"
+  "homepage": "https://github.com/rhokbrisbane/substation33#readme",
+  "engines": {
+    "node": "4.3.2"
+  }
 }
