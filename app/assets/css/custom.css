@@ -18,11 +18,21 @@ body {
 .white { color: white }
 .bg-white { background-color: white }
 
+.white-hover:hover { color:white }
+
 .black { color: black }
 .bg-black { background-color: black }
 
 .grey { color: #9E9E9E }
 .bg-grey { background-color: #9E9E9E }
+
+.green { color: #6fbf24 }
+.bg-green { background-color: #6fbf24 }
+
+.dark-green { color: #478912 }
+.bg-dark-green { background-color: #478912 }
+
+.bg-dark-green-hover:hover { background-color: #478912 }
 
 /* shadow */
 
@@ -37,3 +47,17 @@ body {
 .min-height-100-minus-header {
   min-height: calc(100vh - 6.7em);
 }
+
+.grow {
+  transition: all 0.2s ease;
+}
+
+.grow:hover {
+  transform: scale(1.1); 
+}
+
+.container {
+  max-width: 45rem;
+}
+
+
