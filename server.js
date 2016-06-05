@@ -64,7 +64,7 @@ router
       firebase.database().ref('/collections/').push(req.body).then(function(result) {
         console.log('blah');
         res.json({ response: 'request received!' });
-        emailGateway.sendThankYouEmail({ to: req.customer.email });
+        emailGateway.sendThankYouEmail({ to: req.body.customer.email });
       });
     } else {
       var updates = {};
@@ -72,7 +72,7 @@ router
       firebase.database().ref().update(updates).then(function(result) {
         console.log('blah1')
         res.json({ response: 'request received!' });
-        emailGateway.sendThankYouEmail({ to: req.customer.email });
+        emailGateway.sendThankYouEmail({ to: req.body.customer.email });
       }); 
     }
     
