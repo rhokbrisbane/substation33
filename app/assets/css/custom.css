@@ -35,5 +35,5 @@ body {
 }
 
 .min-height-100-minus-header {
-  min-height: calc(100vh - 6.3em);
+  min-height: calc(100vh - 6.7em);
 }
