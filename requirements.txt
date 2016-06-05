@@ -25,22 +25,26 @@ date = string
 
 
 jsonformat:
-{"customer" : {"firstName" : "first",
-		"lastName" : "last",
+{
+	"driver": {
+		name: ""
+	},
+	"customer" : {
+		"name": "foo bar",
 		"address" : "123 fakestreet fakey 4056",
-		"email" : "email@gmail.com"
-		},
- "donation" : {"donationLocation" : "offsite or onsite",
+		"email" : "email@gmail.com",
+		"contact_number": "0401293812"
+	},
+ 	"donation" : {
+ 		"donationLocation" : "offsite or onsite",
 		"donationReason" : "felt like it",
-		"date" : 12/12/2016
-		"desktopComputer" : 5,
-		"monitor" : 2,
-		"TV" : 8,
-		"laptop" : 1,
-		"printer" : 2,
-		"accessories" : 56,
-      		"other" : 34
-		}
+		"date" : 12/12/2016,
+
+		"prescribed": 20
+		"non-prescribed": 12
+		"total": 32
+	},
+	"collected": false
 }
 
 

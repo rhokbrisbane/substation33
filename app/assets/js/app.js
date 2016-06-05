@@ -1,31 +1,27 @@
 var app = angular.module('app', [
-    'ngRoute',
-    'ui.bootstrap',
-    'restangular',
-    'pasvaz.bindonce'
+  'ngRoute',
+  'ui.bootstrap',
+  'restangular',
+  'pasvaz.bindonce'
 ]);
 
 app.run(function ($rootScope, $http, $location, $route) {
-    $rootScope.$route = $route;
+
 });
 
 app.config(function ($routeProvider) {
-    $routeProvider.
-    when('/', {
-        templateUrl: 'assets/partials/index.html',
-        controller: 'HomeCtrl',
-        active: 'home'
+  $routeProvider.
+    when('/orders', {
+      templateUrl: 'assets/partials/orders/index.html',
+      controller: 'OrdersCtrl',
+      active: 'home'
     }).
-    when('/users', {
-        templateUrl: 'assets/partials/users/index.html',
-        controller: 'UsersCtrl',
-        active: 'users'
+    when('/orders/edit', {
+      templateUrl: 'assets/partials/orders/entry-form.html',
+      controller: 'OrderEntryCtrl',
+      active: 'users'
     }).
     otherwise({
-        redirectTo: '/'
+      redirectTo: '/orders'
     });
-});
-
-app.controller('HomeCtrl', function ($scope, $http) {
-    $scope.users = [];
 });
