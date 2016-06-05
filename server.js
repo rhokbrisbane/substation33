@@ -14,8 +14,6 @@ firebase.initializeApp({
     "serviceAccount": "config/firebase.json"
 });
 
-firebase.database.enableLogging(true);
-
 var db = firebase.database();
 var ref = db.ref("collections");
 
@@ -24,8 +22,8 @@ app.use('/api', router);
 
 router.use(bodyParser.json());
 
-router.route('/collection')
-  .post((req, res) => {
+router
+  .post('/collections', (req, res) => {
     
     var newCollectionKey = firebase.database().ref().child('collections').push().key;
 
@@ -36,6 +34,39 @@ router.route('/collection')
       console.log(req.body);
       res.json({ response: 'request received!' });
     })
+  })
+  .get('/collections/:date', (req, res) => {
+    
+    var date = req.params.date;
+    
+    var ref = firebase.database().ref("collections");
+    ref.orderByChild("donation/date").equalTo(date).once('value').then(function(snapshot) {
+      res.json(snapshot.val());
+    });
+    
+  })
+  .get('/collection/:key', (req, res) => {
+    
+    var key = req.params.key;
+    
+    var ref = firebase.database().ref("collections");
+    ref.orderByKey().equalTo(key).once('value').then(function(snapshot) {
+      res.json(snapshot.val());
+    });
+    
+  })
+  .post('/collection/:key', (req, res) => {
+    
+    var key = req.params.key;
+
+    var updates = {};
+    updates['/collections/' + key] = req.body;
+  
+    firebase.database().ref().update(updates).then(function(result) {
+      console.log(req.body);
+      res.json({ response: 'request received!' });
+    })
+    
   });
 
 app.listen(port, () => {
