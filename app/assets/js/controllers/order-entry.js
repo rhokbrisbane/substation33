@@ -21,7 +21,7 @@ angular.module('app')
       });
     };
 
-    $updateTotalWeight = function() {
+    $scope.updateTotalWeight = function() {
       form.donation.total_donation_weight = form.donation.prescribed_weight + form.donation.nonprescribed_weight;
     };
     
