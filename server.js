@@ -46,7 +46,7 @@ router
     });
     
   })
-  .get('/collection', (req, res) => {
+  .get('/collection/:key', (req, res) => {
     
     var key = req.params.key;
     

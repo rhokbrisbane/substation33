@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app')
-  .directive('order', function () {
+  .directive('order', [function () {
     return {
       restrict: 'E',
       replace: true,
@@ -10,7 +10,6 @@ angular.module('app')
       },
       templateUrl: 'assets/partials/orders/order.html',
       link: function(scope) {
-
       }
     };
-  });
+  }]);
