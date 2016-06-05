@@ -8,7 +8,7 @@ module.exports = {
   // args.templateName
   sendThankYouEmail: (args) => {
     if(!args.to) { throw "Argument Error: Missing 'to' argument" }
-    if(!config.emailGateway.sendEmails) { return console.log(`[DEV] Email sent to: ${args.to}`) }
+    //if(!config.emailGateway.sendEmails) { return console.log(`[DEV] Email sent to: ${args.to}`) }
 
     let templateIds = {
       default: "65e49ee3-bf0c-4e6f-a3bb-1f987b40a6a1"

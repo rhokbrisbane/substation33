@@ -63,18 +63,14 @@ router
     if (key == undefined) {
       firebase.database().ref('/collections/').push(req.body).then(function(result) {
         res.json({ response: 'request received!' });
-        if (req.body.donation.total_donation_weight > 0) {
-          emailGateway.sendThankYouEmail({ to: req.customer.email });
-        }
+        emailGateway.sendThankYouEmail({ to: req.customer.email });
       });
     } else {
       var updates = {};
       updates['/collections/' + key] = req.body;
       firebase.database().ref().update(updates).then(function(result) {
         res.json({ response: 'request received!' });
-        if (req.body.donation.total_donation_weight > 0) {
-          emailGateway.sendThankYouEmail({ to: req.customer.email });
-        }
+        emailGateway.sendThankYouEmail({ to: req.customer.email });
       }); 
     }
     
