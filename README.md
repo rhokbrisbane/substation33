@@ -13,6 +13,10 @@ Hosting:  Heroku
 npm install
 bower install
 
+## config
+
+See `server/config.js`
+
 ## start server
 
 server: npm run start

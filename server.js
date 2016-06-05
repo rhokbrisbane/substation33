@@ -5,7 +5,9 @@ const bodyParser  = require('body-parser');
 const firebase    = require('firebase');
 const app         = express();
 const router      = express.Router();
-const port        = 8081;
+const config      = require('./server/config');
+const emailGateway = require('./server/email_gateway');
+const port        = config.port;
 
 const helpers     = require('./server/helpers.js');
 
@@ -67,6 +69,12 @@ router
       res.json({ response: 'request received!' });
     })
     
+  });
+router.route('/emails/thank-you')
+  .post((req, res) => {
+    emailGateway.sendThankYouEmail({ to: req.body.to });
+
+    res.json({ status: 'ok' });
   });
 
 app.listen(port, () => {
