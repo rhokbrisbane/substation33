@@ -7,9 +7,11 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
+        <link href='https://fonts.googleapis.com/css?family=Work+Sans:400,600' rel='stylesheet' type='text/css'>
         <!-- build:css -->
-        <link rel="stylesheet" href="assets/vendor/bootstrap/dist/css/bootstrap.min.css">
-        <link rel="stylesheet" href="assets/css/main.css">
+        <link rel="stylesheet" href="assets/css/normalize.css">
+        <link rel="stylesheet" href="assets/css/basscss.css">
+        <link rel="stylesheet" href="assets/css/custom.css">
         <!-- endbuild -->
 
         <!-- build:vendor -->
@@ -28,9 +30,12 @@
         <!-- endbuild -->
 
     </head>
-    <body>
-        <div class="container">
-            <ng-view></ng-view>
+    <body class="gradient min-height-100">
+      <div class="overflow-hidden app px2 pb2">
+        <div class="white pb3 pt3"><span class="bold">Substation</span>33</div>
+        <div class="p2 min-height-100-minus-header container bg-white rounded shadow">
+          <ng-view></ng-view>
         </div>
+      </div>
     </body>
 </html>

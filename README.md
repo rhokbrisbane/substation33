@@ -10,17 +10,32 @@ Hosting:  Heroku
 
 ## install stuff
 
+```
 npm install
+```
+
+```
 bower install
+```
 
 ## start server
 
+```
 server: npm run start
+```
 
-## build files
+## watch and build, or build files
 
-build: gulp build
+watch and build
+```
+gulp build:watch
+```
+
+build
+```
+gulp build
+```
 
 ## view app
 
-localhost:8080
+http://localhost:8081

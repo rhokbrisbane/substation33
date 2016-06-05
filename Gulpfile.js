@@ -120,8 +120,11 @@ gulp.task('bower', function () {
 
 });
 
-gulp.task('build', function () {
+gulp.task('watch:build', function() {
+  gulp.watch('./app/**', ['build'])
+});
 
+gulp.task('build', function () {
   runSequence(
     'clean',
     'usemin',
