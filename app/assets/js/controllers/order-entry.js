@@ -5,6 +5,8 @@ angular.module('app')
       customer: {},
       driver: {},
       donation: {
+        date: new Date().setHours(0,0,0,0),
+        dateActual: new Date(),
         prescribed_weight: 0,
         nonprescribed_weight: 0,
         total_donation_weight: 0
@@ -19,7 +21,7 @@ angular.module('app')
       });
     };
 
-    $updateTotalWeight = function() {
+    $scope.updateTotalWeight = function() {
       form.donation.total_donation_weight = form.donation.prescribed_weight + form.donation.nonprescribed_weight;
     };
     
