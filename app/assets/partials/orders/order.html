@@ -1,5 +1,7 @@
 <div class=" bg-dark-green bg-blue-hover grow-small white rounded p2 mt1">
   
-  {{ order.customer.name }}
+  <a ng-href="#/orders/edit?key={{ order._id }}">
+    {{ order.customer.name }}
+  </a>
 
 </div>
