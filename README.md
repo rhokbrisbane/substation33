@@ -18,6 +18,10 @@ npm install
 bower install
 ```
 
+## config
+
+See `server/config.js`
+
 ## start server
 
 ```

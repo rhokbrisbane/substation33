@@ -29,7 +29,8 @@
     "gulp-spa": "^0.2.2",
     "gulp-uglify": "^0.3.1",
     "gulp-util": "^2.2.17",
-    "run-sequence": "^0.3.6"
+    "run-sequence": "^0.3.6",
+    "sendgrid": "^2.0.0"
   },
   "repository": {
     "type": "git",
