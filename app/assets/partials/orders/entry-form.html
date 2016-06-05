@@ -1,37 +1,56 @@
 <div>
   Enter a new order:
 
-  <section>
-    
-    <h2>Customer</h2>
+  <form action="">
 
-    <span>Name:</span>
-    <input type="text" />
+    <section>
+      
+      <h2>Customer</h2>
 
-    <span>Address:</span>
-    <input type="text" />
+      <span>Name:</span>
+      <input type="text" ng-model="form.customer.name" />
 
-  </section>
+      <span>Address:</span>
+      <input type="text" ng-model="form.customer.address" />
 
+      <span>email:</span>
+      <input type="text" ng-model="form.customer.email" />
 
-  <section>
-    <h2>Driver</h2>
-  </section>
+      <span>Phone Number:</span>
+      <input type="text" ng-model="form.customer.contact_number" />
 
-  <section>
-    <h2>Donation Details</h2>
-
-    <span>Prescribed:</span>
-    <input type="text" />
-
-    <span>Non-Prescribed:</span>
-    <input type="text" />
-
-    <span>Total:</span>
-    <div>{{ total_donation_weight }}</div>
+    </section>
 
 
-  </section>
+    <section>
+      <h2>Driver</h2>
+    </section>
+
+    <section>
+      <h2>Donation Details</h2>
+
+      <span>Prescribed:</span>
+      <input type="number" ng-model="form.donation.prescribed_weight" ng-change="updateTotalWeight()" />
+
+      <span>Non-Prescribed:</span>
+      <input type="number" ng-model="form.donation.nonprescribed_weight" ng-change="updateTotalWeight()" />
+
+      <span>Total:</span>
+      <div>{{ form.donation.total_donation_weight }}</div>
+
+
+    </section>
+
+
+    <section>
+      
+      <span>Collected?</span>
+      <input type="checkbox" ng-model="form.donation.collected">
+
+    </section>
+  </form>
+
+  <button ng-click="addCollectionInformation()"></button>
 
 
 

@@ -9,11 +9,20 @@ angular.module('app')
       name: 'blah3'
     }];
 
-    /*api_connector.getOrders().then(function (response) {
-      console.log(response);
-      $scope.orders = response;
-    });*/
+    $scope.onDateChange = function(e) {
+      // TODO: get date from event
+      $scope.getOrders(start);
+    };
 
+    $scope.getOrders = function(start) {
+      var startDate = new Date(start.setHours(0,0,0,0));
+      var endDate   = new Date(start.setHours(23,59,59,999));
+
+      api_connector.getOrdersByDate(startDate, endDate).then(function (response) {
+        $scope.orders = response;
+      });
+    };
+
+    $scope.getOrders(new Date());
+  
   }]);
-
-

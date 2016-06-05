@@ -1,31 +1,29 @@
 angular.module('app')
   .service('api_connector', ['$http', function($http) {
 
-    var getOrders = function getOrders() {
-      requestBody = {
+    var baseUrl = 'http://localhost:8081/api/';
 
-      };
-
+    var getOrdersByDate = function getOrdersByDate(date) {
       return $http({
-        method: 'POST',
-        url: 'http://localhost:8080/api/orders',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        data: requestBody
+        method: 'GET',
+        url: baseURL + 'collections/' + date
       });
-
     };
+
+    var getOrderByKey = function getOrderByKey(key) {
+      return $http({
+        method: 'GET',
+        url: baseUrl + 'collection/' + key
+      });
+    };
+
+
 
     var sendCollectionDetails = function sendCollectionDetails(requestBody) {
 
-      requestBody = {
-        // ...test body goes here
-      };
-
       return $http({
         method: 'POST',
-        url: 'http://localhost:8080/api/collection',
+        url: baseUrl + 'collections',
         headers: {
           'Content-Type': 'application/json'
         },
@@ -35,8 +33,9 @@ angular.module('app')
     };
 
     return {
-      getOrders: getOrders,
-      sendCollectionDetails: sendCollectionDetails
+      getOrdersByDate:        getOrdersByDate,
+      getOrderByKey:          getOrderByKey,
+      sendCollectionDetails:  sendCollectionDetails
     };
 
 }]);
