@@ -1,7 +1,9 @@
 angular.module('app')
-  .service('api_connector', ['$http', function($http) {
+  .service('api_connector', ['$http', '$location', function($http, $location) {
 
-    var baseUrl = 'http://localhost:8081/api/';
+    console.log($location.$$host);
+
+    var baseUrl = $location.$$host == 'localhost' ? 'http://localhost:8081/api/' : 'https://substation33.herokuapp.com/api/';
 
     var getOrdersByDate = function getOrdersByDate(date) {
       return $http({
