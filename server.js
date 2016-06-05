@@ -62,17 +62,17 @@ router
   
     if (key == undefined) {
       firebase.database().ref('/collections/').push(req.body).then(function(result) {
-        console.log('blah')
-        emailGateway.sendThankYouEmail({ to: req.customer.email });
+        console.log('blah');
         res.json({ response: 'request received!' });
+        emailGateway.sendThankYouEmail({ to: req.customer.email });
       });
     } else {
       var updates = {};
       updates['/collections/' + key] = req.body;
       firebase.database().ref().update(updates).then(function(result) {
         console.log('blah1')
-        emailGateway.sendThankYouEmail({ to: req.customer.email });
         res.json({ response: 'request received!' });
+        emailGateway.sendThankYouEmail({ to: req.customer.email });
       }); 
     }
     
